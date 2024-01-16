@@ -12,7 +12,6 @@ const Header = () => {
             aria-label="WindUI logo"
             aria-current="page"
             class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1"
-            href="javascript:void(0)"
           >
             <svg
               width="300"
@@ -46,15 +45,15 @@ const Header = () => {
               <span
                 aria-hidden="true"
                 class="absolute block h-0.5 w-9/12 -translate-y-2 transform rounded-full bg-slate-900 transition-all duration-300"
-              ></span>
+              />
               <span
                 aria-hidden="true"
                 class="absolute block h-0.5 w-6 transform rounded-full bg-slate-900 transition duration-300"
-              ></span>
+              />
               <span
                 aria-hidden="true"
                 class="absolute block h-0.5 w-1/2 origin-top-left translate-y-2 transform rounded-full bg-slate-900 transition-all duration-300"
-              ></span>
+              />
             </div>
           </button>
           <ul
@@ -67,7 +66,6 @@ const Header = () => {
                 role="menuitem"
                 aria-haspopup="false"
                 class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                href="javascript:void(0)"
               >
                 {" "}
                 <span>Blog</span>
@@ -79,7 +77,6 @@ const Header = () => {
                 aria-current="page"
                 aria-haspopup="false"
                 class="flex items-center gap-2 py-4 transition-colors duration-300 text-emerald-500 hover:text-emerald-600 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                href="javascript:void(0)"
               >
                 {" "}
                 <span>Planning</span>{" "}
@@ -90,7 +87,6 @@ const Header = () => {
                 role="menuitem"
                 aria-haspopup="false"
                 class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                href="javascript:void(0)"
               >
                 {" "}
                 <span>About me</span>{" "}
