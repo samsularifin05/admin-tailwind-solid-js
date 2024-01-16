@@ -1,11 +1,13 @@
 import { Header, Content, Sidebar } from "./components";
+import { ToastNotification, themes } from "./utils";
 
 function App() {
   return (
     <>
-      <Header />
-      <Sidebar />
+      {themes.header && <Header />}
+      {themes.sidebar && <Sidebar />}
       <Content />
+      <ToastNotification />
     </>
   );
 }
