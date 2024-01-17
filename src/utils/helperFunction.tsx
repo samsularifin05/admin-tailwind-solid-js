@@ -1,4 +1,4 @@
-const ToastNotification = () => {
+export const ToastNotification = () => {
   return (
     <div
       id="toast"
@@ -36,4 +36,15 @@ export const showToast = (message: string, duration = 3000) => {
   }
 };
 
-export default ToastNotification;
+// export const setItem = (nama: string, data: any) => {
+//   localStorage.setItem(nama, JSON.stringify(data));
+// };
+// export const removeItem = (nama: string) => {
+//   localStorage.removeItem(nama);
+// };
+
+// export const getItem = (nama: string) => {
+//   return localStorage.getItem(nama) === null
+//     ? []
+//     : JSON?.parse(localStorage.getItem(nama));
+// };
