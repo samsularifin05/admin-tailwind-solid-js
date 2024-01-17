@@ -10,6 +10,10 @@ const Login = () => {
 
   const [username, setUsername] = createSignal("");
   const [password, setPassword] = createSignal("");
+  const [showPassword, setShowPassword] = createSignal(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword());
+  };
   const navigate = useNavigate();
   const login = (event: Event) => {
     event.preventDefault();
@@ -68,20 +72,29 @@ const Login = () => {
             >
               Password
             </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Masukan Password"
-              class="mt-1 p-2 w-full border rounded-md"
-              value={password()}
-              autocomplete="current-password"
-              onInput={(e: Event) =>
-                setPassword((e.target as HTMLInputElement).value)
-              }
-            />
+            <div class="relative">
+              <input
+                type={showPassword() ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="Masukan Password"
+                class="mt-1 p-2 w-full border rounded-md"
+                value={password()}
+                autocomplete="current-password"
+                onInput={(e) => setPassword(e.target.value)}
+              />
+              <span
+                class="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword() ? (
+                  <i class="fa fa-eye" />
+                ) : (
+                  <i class="fa fa-eye-slash" />
+                )}
+              </span>
+            </div>
           </div>
-
           <button
             type="submit"
             class="w-full bg-blue-500 text-white p-2 rounded-md"
