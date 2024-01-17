@@ -1,4 +1,4 @@
-import ToastNotification, { showToast } from "./helperFunction";
+import { ToastNotification, showToast } from "./helperFunction";
 
 export * from "./store";
 
