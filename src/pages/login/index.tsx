@@ -1,6 +1,8 @@
 import { createEffect, createSignal } from "solid-js";
 import { setThemes, showToast } from "../../utils";
 import { useNavigate } from "@solidjs/router";
+import { getItem, setItem } from "../../utils";
+import { UserDataInterFace } from "../../interface";
 const Login = () => {
   createEffect(() => {
     setThemes({ sidebar: false, header: false, blankScreen: false });
@@ -14,10 +16,23 @@ const Login = () => {
     if (username() === "admin" && password() === "admin") {
       navigate("/dashboard");
       setThemes({ sidebar: true, header: true, blankScreen: true });
+      setItem<UserDataInterFace>("userdata", {
+        username: username(),
+        password: password()
+      });
     } else {
       showToast("Username Password Salah");
     }
   };
+
+  createEffect(() => {
+    if (getItem<UserDataInterFace>("userdata").username) {
+      setThemes({ sidebar: true, header: true, blankScreen: true });
+      navigate("/dashboard");
+    }
+    setUsername("admin");
+    setPassword("admin");
+  });
 
   return (
     <div class="bg-gray-100 h-screen flex items-center justify-center">

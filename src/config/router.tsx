@@ -1,29 +1,46 @@
 import { Dashboard, About, Contact, Login } from "../pages";
+import { ProtectedRoute } from "./protectedRoute";
 
 const MenuRoutes = [
   {
     path: "/dashboard",
     exact: true,
     title: "Dashboard",
-    component: () => <Dashboard />
+    component: () => (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/about",
     exact: true,
     title: "About",
-    component: () => <About />
+    component: () => (
+      <ProtectedRoute>
+        <About />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/contact-us",
     exact: true,
     title: "Contact-us",
-    component: () => <Contact />
+    component: () => (
+      <ProtectedRoute>
+        <Contact />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/",
     exact: true,
     title: "login",
-    component: () => <Login />
+    component: () => (
+      <ProtectedRoute>
+        <Login />
+      </ProtectedRoute>
+    )
   }
 ];
 

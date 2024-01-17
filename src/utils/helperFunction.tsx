@@ -1,3 +1,5 @@
+import { LocalStorageItem } from "../interface";
+
 export const ToastNotification = () => {
   return (
     <div
@@ -36,15 +38,33 @@ export const showToast = (message: string, duration = 3000) => {
   }
 };
 
-// export const setItem = (nama: string, data: any) => {
-//   localStorage.setItem(nama, JSON.stringify(data));
-// };
-// export const removeItem = (nama: string) => {
-//   localStorage.removeItem(nama);
-// };
+export const setItem = <T,>(nama: string, data: T) => {
+  if (typeof window !== "undefined") {
+    const item: LocalStorageItem<T> = {
+      nama: nama,
+      data: data
+    };
+    localStorage.setItem(item.nama, JSON.stringify(item.data));
+  }
+};
 
-// export const getItem = (nama: string) => {
-//   return localStorage.getItem(nama) === null
-//     ? []
-//     : JSON?.parse(localStorage.getItem(nama));
-// };
+export const removeItem = (nama: string) => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem(nama);
+  }
+};
+
+export const getItem = <T,>(nama: string): T => {
+  if (typeof window !== "undefined") {
+    const encryptedNama = nama;
+    const item = localStorage.getItem(encryptedNama);
+
+    if (item !== null) {
+      const decryptedData = JSON.parse(item);
+      return decryptedData as T;
+    } else {
+      return [] as T;
+    }
+  }
+  return [] as T;
+};
