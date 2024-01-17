@@ -5,7 +5,7 @@ import { themes } from "../../../utils";
 
 const NotFound = () => {
   return (
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-[80vh]">
       <div class="text-center">
         <h2 class="text-4xl font-bold text-red-500">404 Not Found</h2>
         <p class="text-gray-600 mt-2">The requested page could not be found.</p>
