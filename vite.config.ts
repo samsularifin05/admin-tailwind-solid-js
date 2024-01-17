@@ -14,7 +14,7 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     build: {
-      minify: "terser",
+      minify: "esbuild",
       emptyOutDir: true,
       outDir: "build",
       sourcemap: false,
