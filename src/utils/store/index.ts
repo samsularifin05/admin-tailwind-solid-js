@@ -5,3 +5,8 @@ export const [themes, setThemes] = createStore({
   header: true,
   blankScreen: true
 });
+export const [loading, setLoading] = createStore({
+  screen: false,
+  button: false,
+  table: false
+});

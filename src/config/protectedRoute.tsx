@@ -22,6 +22,7 @@ export const ProtectedRoute = <T extends JSX.Element | string>(
 
   if (!userData.username) {
     navigate("/");
+    setThemes({ sidebar: false, header: false, blankScreen: false });
   }
 
   return <>{props.children}</>;

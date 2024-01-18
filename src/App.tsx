@@ -1,5 +1,5 @@
 import { Header, Content, Sidebar } from "./components";
-import { ToastNotification, themes } from "./utils";
+import { LoadingScreen, ToastNotification, themes } from "./utils";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       {themes.sidebar && <Sidebar />}
       <Content />
       <ToastNotification />
+      <LoadingScreen />
     </>
   );
 }

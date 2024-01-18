@@ -1,5 +1,5 @@
 import { createEffect, createSignal } from "solid-js";
-import { setThemes, showToast } from "../../utils";
+import { setLoading, setThemes, showToast } from "../../utils";
 import { useNavigate } from "@solidjs/router";
 import { getItem, setItem } from "../../utils";
 import { UserDataInterFace } from "../../interface";
@@ -17,16 +17,22 @@ const Login = () => {
   const navigate = useNavigate();
   const login = (event: Event) => {
     event.preventDefault();
-    if (username() === "admin" && password() === "admin") {
-      navigate("/dashboard");
-      setThemes({ sidebar: true, header: true, blankScreen: true });
-      setItem<UserDataInterFace>("userdata", {
-        username: username(),
-        password: password()
-      });
-    } else {
-      showToast("Username Password Salah");
-    }
+    setLoading({ screen: true });
+
+    setTimeout(() => {
+      if (username() === "admin" && password() === "admin") {
+        navigate("/dashboard");
+        setThemes({ sidebar: true, header: true, blankScreen: true });
+        setItem<UserDataInterFace>("userdata", {
+          username: username(),
+          password: password()
+        });
+        setLoading({ screen: false });
+      } else {
+        setLoading({ screen: false });
+        showToast("Username Password Salah");
+      }
+    }, 1000);
   };
 
   createEffect(() => {
@@ -97,7 +103,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            class="w-full bg-blue-500 text-white p-2 rounded-md"
+            class="w-full bg-black text-white p-2 rounded-md"
           >
             Login
           </button>

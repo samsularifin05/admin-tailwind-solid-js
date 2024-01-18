@@ -19,10 +19,10 @@ const Dashboard = () => {
         </Col>
       </Row>
       <Grid gridSize={1}>
-        <div class="p-4 rounded-lg shadow-lg bg-pink-500">01</div>
-        <div class="p-4 rounded-lg shadow-lg bg-pink-500">02</div>
-        <div class="p-4 rounded-lg shadow-lg bg-pink-500">03</div>
-        <div class="p-4 rounded-lg shadow-lg bg-pink-500">04</div>
+        <div class="p-4 rounded-lg shadow-lg bg-black">01</div>
+        <div class="p-4 rounded-lg shadow-lg bg-black">02</div>
+        <div class="p-4 rounded-lg shadow-lg bg-black">03</div>
+        <div class="p-4 rounded-lg shadow-lg bg-black">04</div>
       </Grid>
     </>
   );

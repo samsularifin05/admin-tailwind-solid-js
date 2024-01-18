@@ -1,5 +1,5 @@
 import { Show, For, createSignal } from "solid-js";
-import { removeItem, setThemes } from "../../../utils";
+import { removeItem, setLoading } from "../../../utils";
 
 const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = createSignal(false);
@@ -9,12 +9,12 @@ const Header = () => {
   };
 
   const handleLogout = () => {
+    setLoading({ screen: true });
     removeItem("userdata");
-    window.location.reload();
     setTimeout(() => {
-      setThemes({ sidebar: false, header: false, blankScreen: false });
-      setDropdownOpen(false);
-    }, 300);
+      window.location.reload();
+      setLoading({ screen: false });
+    }, 3000);
   };
 
   const handleProfile = () => {};

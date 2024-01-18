@@ -1,3 +1,4 @@
+import { loading } from ".";
 import { LocalStorageItem } from "../interface";
 
 export const ToastNotification = () => {
@@ -8,6 +9,21 @@ export const ToastNotification = () => {
     >
       <p class="font-bold">{"Info!"}</p>
       <p id="idPesan">Hallo</p>
+    </div>
+  );
+};
+
+export const LoadingScreen = () => {
+  return (
+    <div
+      id="loadingScreen"
+      class={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-slate-300 bg-opacity-50 z-50 ${
+        loading.screen ? "" : "hidden"
+      }`}
+    >
+      <div class="animate-spin mt-4">
+        <div class="border-t-4 border-black border-solid h-12 w-12 rounded-full" />
+      </div>
     </div>
   );
 };
