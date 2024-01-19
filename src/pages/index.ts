@@ -1,7 +1,7 @@
 import Dashboard from "./dashboard";
-import About from "./about";
+import User from "./user";
 import Contact from "./contact";
 import Login from "./login";
 import { NotFound } from "./notFound";
 
-export { Dashboard, About, Contact, Login, NotFound };
+export { Dashboard, User, Contact, Login, NotFound };

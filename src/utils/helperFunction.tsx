@@ -5,7 +5,7 @@ export const ToastNotification = () => {
   return (
     <div
       id="toast"
-      class="fixed top-0 right-0 m-4 bg-blue-200 text-blue-800 border-blue-500 border-l-4 p-4 rounded-md opacity-0 transform translate-x-full transition-transform duration-300 ease-in-out"
+      class="fixed top-0 right-0 m-4 bg-blue-200 text-blue-800 border-blue-500 border-l-4 p-4 rounded-md opacity-0 transform translate-x-full transition-transform duration-300 ease-in-out z-50"
     >
       <p class="font-bold">{"Info!"}</p>
       <p id="idPesan">Hallo</p>

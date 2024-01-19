@@ -5,7 +5,7 @@ export const sidebarMenu = [
     href: "/pages",
     icon: "fa-solid fa-file",
     submenu: [
-      { label: "About Us", href: "/about" },
+      { label: "User", href: "/user" },
       { label: "Contact Us", href: "/contact-us" }
     ]
   },

@@ -1,4 +1,4 @@
-import { Dashboard, About, Contact, Login } from "../pages";
+import { Dashboard, User, Contact, Login } from "../pages";
 import { ProtectedRoute } from "./protectedRoute";
 
 const MenuRoutes = [
@@ -13,12 +13,12 @@ const MenuRoutes = [
     )
   },
   {
-    path: "/about",
+    path: "/user",
     exact: true,
-    title: "About",
+    title: "User",
     component: () => (
       <ProtectedRoute>
-        <About />
+        <User />
       </ProtectedRoute>
     )
   },
