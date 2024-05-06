@@ -26,7 +26,7 @@ const SubMenu = (props: { submenu: MenuItem[] }) => {
             <a
               href={menuItem.submenu ? "#" : menuItem.href}
               onClick={() => toggleSubMenu(menuItem.label)}
-              class="flex flex-row items-center gap-3 p-3 transition-colors rounded text-slate-700 hover:text-emerald-500 hover:bg-emerald-50 focus:bg-emerald-50 aria-[current=page]:text-emerald-500 aria-[current=page]:bg-emerald-50 "
+              class="flex flex-row items-center gap-3 p-3 transition-colors rounded text-black hover:text-white focus:text-white hover:bg-black focus:bg-black aria-[current=page]:text-white aria-[current=page]:bg-black"
             >
               <div class="flex items-center self-center " />
               <div class="flex flex-col items-start justify-center flex-1 w-full gap-0 overflow-hidden text-sm truncate">
@@ -81,7 +81,7 @@ const Sidebar = () => {
                   <a
                     href={menuItem.submenu ? "#" : menuItem.href}
                     onClick={() => toggleSubMenu(menuItem.label)}
-                    class="flex flex-row items-center gap-3 p-3 transition-colors rounded text-slate-700 hover:text-emerald-500 hover:bg-emerald-50 focus:bg-emerald-50 aria-[current=page]:text-emerald-500 aria-[current=page]:bg-emerald-50 "
+                    class="flex flex-row items-center gap-3 p-3 transition-colors rounded text-black focus:text-white hover:text-white hover:bg-black focus:bg-black aria-[current=page]:text-white aria-[current=page]:bg-black"
                   >
                     <div class="flex items-center self-center ">
                       <i class={menuItem.icon} />
