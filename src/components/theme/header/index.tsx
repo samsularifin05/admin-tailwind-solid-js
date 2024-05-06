@@ -1,7 +1,10 @@
 import { Show, For, createSignal } from "solid-js";
 import { removeItem, setLoading } from "../../../utils";
+import { useNavigate } from "@solidjs/router";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const [isDropdownOpen, setDropdownOpen] = createSignal(false);
 
   const handleDropdownToggle = () => {
@@ -12,7 +15,7 @@ const Header = () => {
     setLoading({ screen: true });
     removeItem("userdata");
     setTimeout(() => {
-      window.location.reload();
+      navigate("/");
       setLoading({ screen: false });
     }, 3000);
   };
