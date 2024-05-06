@@ -1,11 +1,18 @@
 import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 export default defineConfig(({ command, mode }) => {
   const timestamp = new Date().getTime();
+  console.log(mode);
 
   return {
-    plugins: [solid()],
+    plugins: [
+      solid(),
+      createHtmlPlugin({
+        minify: true
+      })
+    ],
     cacheControl: "max-age=3600",
     css: {
       modules: {
@@ -14,11 +21,11 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     build: {
-      minify: "esbuild",
+      // minify: "esbuild",
       emptyOutDir: true,
       outDir: "build",
       sourcemap: false,
-      // minify: mode === "production",
+      minify: mode === "production",
       cssCodeSplit: true,
       modulePreload: true,
       chunkSizeWarningLimit: 1000000,

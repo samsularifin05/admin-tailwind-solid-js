@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { For } from "solid-js";
+import { For, lazy } from "solid-js";
 import { Route, Router } from "@solidjs/router";
 import { MenuRoutes } from "../../../config";
 import { themes } from "../../../utils";
 import { NotFound } from "../../../pages";
-import Header from "../header";
-import Sidebar from "../sidebar";
+const Header = lazy(() => import("../header"));
+const Sidebar = lazy(() => import("../sidebar"));
 
 const App = (props: any) => (
   <>

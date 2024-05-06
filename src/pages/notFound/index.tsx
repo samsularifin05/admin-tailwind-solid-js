@@ -2,7 +2,7 @@ import { createEffect } from "solid-js";
 import { getItem, setThemes } from "../../utils";
 import { UserDataInterFace } from "../../interface";
 
-export const NotFound = () => {
+const NotFound = () => {
   const userData = getItem<UserDataInterFace>("userdata");
 
   createEffect(() => {
@@ -39,3 +39,5 @@ export const NotFound = () => {
     </div>
   );
 };
+
+export default NotFound;
